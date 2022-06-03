@@ -8,7 +8,7 @@ const server = require('http').Server(app);
 const io = require('socket.io').listen(server);
 const Datauri = require('datauri');
 const querystring = require('querystring');
-
+ 
 var bodyParser = require('body-parser');
 
 const datauri = new Datauri();
