@@ -4,8 +4,77 @@
         <title>Cinquillo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./../css/lobby.css">
+        <link rel="stylesheet" href="./../css/stylesheet.css">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     </head>
+
+    <body>
+        <div class="form-box" style="background-color: rgb(149, 228, 46);">
+            <table style = "width:100%">
+              <tr>
+                <th>NICKNAME</th>
+                <th>SALA</th>
+                <th></th>
+                <th>AMFITRIO</th>
+              </tr>
+            <% Object.keys(activeGameRooms).forEach(function(room){%>
+              <%if (activeGameRooms[room] != null){%>
+                <tr><form action="/" method="GET" >
+                  <td><input required
+                    type="text"
+                    name="nickname"
+                    placeholder="NOM JUGADOR"
+                   
+                  /></td>
+                  <td><%=activeGameRooms[room].roomName%></td>
+                    <td></td>
+       
+                  <td><%=activeGameRooms[room].roomOwner%></td>
+              
+                  <td>
+                      <input required hidden="true"
+                        name="roomCode"
+                        value="<%=activeGameRooms[room].roomCode%>"
+                      />
+                      <%if (activeGameRooms[room].numPlayers < activeGameRooms[room].maxPlayers) {%>
+                        <input type="submit" value="UNIRTE">
+                      <%} else {%>
+                        <input class="full-button" type="button" value="FULL">
+                      <%}%>
+                  </td>
+                </form></tr>
+              <%}%>
+            <%});%>
+            <tr>
+              <form action="/host-a-game" method="POST" >
+                <td><input required
+                  type="text"
+                  name="nickname"
+                  placeholder="NOM JUGADOR"
+                 
+                /></td>   
+                <td><input required
+                  type="text"
+                  name="roomName"
+                  placeholder="NOM SALA"
+                  maxlength="20"
+                /></td>
+                <td><input style="display: none;"
+                  type="number"
+                  name="maxPlayers"
+                  placeholder="2-5"
+                  min="2"
+                  max="5"
+                  value="5"
+                /></td>
+               <td></td>
+                <td>
+                    <input type="submit" value="CREAR">
+                </td>
+              </form>
+            </tr>
+            </table>
+          </div>
+    </body>
 </html>

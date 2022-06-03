@@ -4,6 +4,23 @@
         <meta charset="UTF-8">
         <title>cinquillo</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="./../css/style.css">
+        <link rel="stylesheet" href="./../css/stylesheet.css">
     </head>
+    <body>
+
+        <div class="row">   
+            <div class="column" id='chat-area'>
+                <ul id="messages"></ul>
+                <form id='chat-form' action="">
+                    <input id="chat-msg"/><button id='chat-send'>Send</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
+        <script type="module" src="../js/joc.js"></script> 
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ 
+    </body>
 </html>
