@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;	
+    background-image: url('/images/fons.png');
+    background-size: cover;}
+    
+    input[type=text] {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    box-sizing: border-box;}
+    
+    input[type=submit] {
+        background-color: #9a0b0b;
+        color: white;
+        padding: 15px;}
+    
+    .full-button {
+        background-color: #362f91;
+        color: white;
+        padding: 15px;}
+    
+    .form-box {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #d6d3ce ;}
+    
+    .center-div {
+        margin-left:  25%;
+          margin-right: 25%; 
+        margin-top: 10%;
+        position: absolute;}
+
+.row {
+    width: 100%;
+    height: 100%;
+    background-size: cover;}
+
+#game-area {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    background-size: cover;}
+
+#chat-area {
+    position: relative;
+    width: 20%;
+    color: white;}
+
+#chat-msg {
+    position: absolute;
+    width: 100%;
+    bottom: 0;}
+
+#chat-send {
+    background-color: #12c0f5;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;}
