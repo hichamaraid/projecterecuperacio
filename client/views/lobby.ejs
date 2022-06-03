@@ -18,8 +18,8 @@
                 <th></th>
                 <th>AMFITRIO</th>
               </tr>
-            <% Object.keys(activeGameRooms).forEach(function(room){%>
-              <%if (activeGameRooms[room] != null){%>
+            <% Object.keys(SalesDeJocActives).forEach(function(sales){%>
+              <%if (SalesDeJocActives[sales] != null){%>
                 <tr><form action="/" method="GET" >
                   <td><input required
                     type="text"
@@ -27,17 +27,17 @@
                     placeholder="NOM JUGADOR"
                    
                   /></td>
-                  <td><%=activeGameRooms[room].roomName%></td>
+                  <td><%=SalesDeJocActives[sales].nomsala%></td>
                     <td></td>
        
-                  <td><%=activeGameRooms[room].roomOwner%></td>
+                  <td><%=SalesDeJocActives[sales].amfitriosala%></td>
               
                   <td>
                       <input required hidden="true"
                         name="roomCode"
-                        value="<%=activeGameRooms[room].roomCode%>"
+                        value="<%=SalesDeJocActives[sales].roomCode%>"
                       />
-                      <%if (activeGameRooms[room].numPlayers < activeGameRooms[room].maxPlayers) {%>
+                      <%if (SalesDeJocActives[sales].numerojugadors < SalesDeJocActives[sales].maximjugadors) {%>
                         <input type="submit" value="UNIRTE">
                       <%} else {%>
                         <input class="full-button" type="button" value="FULL">
@@ -47,7 +47,7 @@
               <%}%>
             <%});%>
             <tr>
-              <form action="/host-a-game" method="POST" >
+              <form action="/cinquillojoc" method="POST" >
                 <td><input required
                   type="text"
                   name="nickname"
