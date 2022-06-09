@@ -18,8 +18,8 @@
                 <th></th>
                 <th>AMFITRIO</th>
               </tr>
-            <% Object.keys(SalesDeJocActives).forEach(function(sales){%>
-              <%if (SalesDeJocActives[sales] != null){%>
+            <% Object.keys(activeGameRooms).forEach(function(room){%>
+              <%if (activeGameRooms[room] != null){%>
                 <tr><form action="/" method="GET" >
                   <td><input required
                     type="text"
@@ -27,17 +27,17 @@
                     placeholder="NOM JUGADOR"
                    
                   /></td>
-                  <td><%=SalesDeJocActives[sales].nomsala%></td>
+                  <td><%=activeGameRooms[room].roomName%></td>
                     <td></td>
        
-                  <td><%=SalesDeJocActives[sales].amfitriosala%></td>
+                  <td><%=activeGameRooms[room].roomOwner%></td>
               
                   <td>
                       <input required hidden="true"
                         name="roomCode"
-                        value="<%=SalesDeJocActives[sales].roomCode%>"
+                        value="<%=activeGameRooms[room].roomCode%>"
                       />
-                      <%if (SalesDeJocActives[sales].numerojugadors < SalesDeJocActives[sales].maximjugadors) {%>
+                      <%if (activeGameRooms[room].numPlayers < activeGameRooms[room].maxPlayers) {%>
                         <input type="submit" value="UNIRTE">
                       <%} else {%>
                         <input class="full-button" type="button" value="FULL">
